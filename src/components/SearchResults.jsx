@@ -1,11 +1,16 @@
-function SearchResults() {
+function SearchResults({ songs }) {
   return (
     <div className="list">
       <h2>Results</h2>
       <ul>
-        <li>Song 1</li>
-        <li>Song 2</li>
-        <li>Song 3</li>
+        {songs.map((track) => (
+          <li key={track.id}>
+            <h3>{track.title}</h3>
+            <p>
+              {track.artist} - {track.album}
+            </p>
+          </li>
+        ))}
       </ul>
     </div>
   );
